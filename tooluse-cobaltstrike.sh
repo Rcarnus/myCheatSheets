@@ -1,4 +1,8 @@
 
+#Plugins
+https://www.kitploit.com/2021/04/movekit-cobalt-strike-kit-for-lateral.html
+
+
 # inject beacon into living system process
 ps
 inject <pid>

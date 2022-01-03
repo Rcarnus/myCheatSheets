@@ -10,6 +10,7 @@
 #Open Wireshark's preferences and select 'TI CC24xx FCS format' under Protocols -> IEEE 802.15.4
 
 #API-mote
+#https://github.com/riverloopsec/killerbee
 #https://www.willhackforsushi.com/presentations/toorcon11-wright.pdf
 #check device presence and device interface
 sudo zbid

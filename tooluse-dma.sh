@@ -29,6 +29,7 @@ Apple Thunderbolt3 (USB-C) - DP to USB-C
 #PCIscreamer plug instructions
 #http://blog.lambdaconcept.com/doku.php?id=products:pcie_screamer
 #https://docs.lambdaconcept.com/screamer/older_versions.html
+#https://docs.lambdaconcept.com/screamer/_images/__gh_pciescreamer2.jpg
 #vu comme: Future Devices FTDI SuperSpeed-FIFO Bridge
 #se bridge tres mal via VMware vers une VM
 

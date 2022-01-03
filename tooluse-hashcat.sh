@@ -28,3 +28,8 @@ hashcat sam.dump -m 1000  --show
 
 # start cracking job with full combinasion
 hashcat sam.dump ?a?a?a?a?a?a?a?a --increment -a 3 -m 1000  -O -w 3
+
+
+
+#DPAT
+python2 ../DPAT/dpat.py -n ./ntlmUserPasswords.ntlm -c /home/pentest/.hashcat/hashcat.potfile

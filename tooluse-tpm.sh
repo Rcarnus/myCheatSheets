@@ -9,6 +9,8 @@ https://blog.elcomsoft.com/2021/01/understanding-bitlocker-tpm-protection/
 #CVE-2018-6622 for the SRTM and CVE-2017-16837 for the DRTM
 https://github.com/kkamagui/napper-for-tpm
 https://www.youtube.com/watch?v=EXyDAWWHeYY
+#https://i.blackhat.com/eu-19/Thursday/eu-19-Han-BitLeaker-Subverting-BitLocker-With-One-Vulnerability.pdf
+#https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-han.pdf
 
 #Bitleaker
 https://github.com/kkamagui/bitleaker
@@ -27,7 +29,7 @@ https://github.com/ionescu007/tpmtool
 #[2019] https://pulsesecurity.co.nz/articles/TPM-sniffing
 #[2020] https://labs.f-secure.com/blog/sniff-there-leaks-my-bitlocker-key/
 #[2021] https://dolosgroup.io/blog/2021/7/9/from-stolen-laptop-to-inside-the-company-network
-
+#[2021] https://blog.scrt.ch/2021/11/15/tpm-sniffing/
 
 #Prepare the ice40 stick
 #Modify the EEPROM of the ice40 stick
