@@ -37,7 +37,8 @@ reg query HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run
 #Scheduled tasks
 schtasks /query /fo LIST /v > schtasks.txt; cat schtask.txt | grep "SYSTEM\|Task To Run" | grep -B 1 SYSTEM
 
-
+#Set Powershell execution policy
+powershell -ExecutionPolicy bypass
 
 #Download files
 #Powershell
@@ -70,3 +71,30 @@ PS C:\> Set-MpPreference -DisableScriptScanning 1
 
 
 #Egress
+
+
+# Arbitrary file delete to RCE
+# https://www.zerodayinitiative.com/blog/2022/3/16/abusing-arbitrary-file-deletes-to-escalate-privilege-and-other-great-tricks
+#
+
+
+#LOTL techniques
+csvde.exe - import/export AD info through csv files
+Volume shadow copy - NTDS.dit extraction
+FRP - reverse proxy
+certutil
+dnscmd
+ldifde
+makecab
+net user/group/use
+netsh
+nltest
+ntdsutil
+powershell
+reg query/save
+systeminfo
+tasklist
+wevtutil
+wmic
+xcopy
+

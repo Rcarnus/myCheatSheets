@@ -2,7 +2,7 @@
 #Install ctags
 apt install exuberant-ctags
 #Generate tags
-tags -R
+ctags -R
 #Use
 #search for definition
 Ctrl-]

@@ -60,3 +60,7 @@ WinPwn -PowerSharpPack -noninteractive
 
 #Windows Kernel exploits
 https://github.com/SecWiki/windows-kernel-exploits
+
+#Concealed Position
+## Bring your Own Vulnerability
+##https://github.com/jacob-baines/concealed_position
