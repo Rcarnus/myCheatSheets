@@ -11,3 +11,10 @@ ssh -R 8080:localhost:80 public.example.com
 
 #Dynamic port forwarding
 ssh -D 1337 -q -C -N user@remotemachine.com
+
+#Tunnel your ssh traffic in HTTP/HTTPS
+http://dag.wiee.rs/howto/ssh-http-tunneling/
+
+
+
+

