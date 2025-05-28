@@ -22,12 +22,23 @@ sudo cp ./cheat.sh /usr/bin/
 ```
 
 ## Usage
+Use cheat.sh to search in your cheatsheets. Add a keyword to search:
 ```
 cheat.sh
 cheat.sh ntlmrelayx
 ```
+For instance
+```
+cheat.sh iex
+```
+![Search Results](https://github.com/Rcarnus/myCheatSheets/blob/main/doc/searchExampleIex.png?raw=true)
 
-Ctrl-N to go to the next result
-Ctrl-P to go to the previous one
+Select Enter to see the corresponding result:
+![Selecting Search Results](https://github.com/Rcarnus/myCheatSheets/blob/main/doc/searchExampleIex2.png?raw=true)
 
+Do Ctrl-N to go to the next result:
+![Navigating Search Results](https://github.com/Rcarnus/myCheatSheets/blob/main/doc/searchExampleIex3.png?raw=true)
 
+Do Ctrl-P to go to the previous one
+
+Enjoy
