@@ -5,6 +5,34 @@ vim-ack plugin 'mileszs/ack.vim'
 silversearcher-ag
 ack
 
+## Installation of ack.vim
+If you are not familiar (like me) with vim plugins, this is how to install ack.vim with vim-plug.
+
+Install vim-plug:
+```
+#https://github.com/junegunn/vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Add the vim.ack plugin in the vim-plug section of you .vimrc:
+```
+call plug#begin()
+" List your plugins here
+Plug 'mileszs/ack.vim'
+call plug#end()
+```
+
+Start vi without a file:
+```
+vi
+```
+Use the PlugInstall command to install the missing plugins:
+```
+:PlugInstall
+```
+
+
 ## Installation
 Clone the repo:
 ```
